@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+}
+
+.loading > div {
+  width: 10vmax;
+  height: 10vmax;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.719);
+
+  border-radius: 50%;
+
+  animation: loadingRotate 800ms linear infinite;
+}
+
+@keyframes loadingRotate {
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+
+
+/* App.css */
+.circular-container {
+  position: relative;
+  width: 250px; /* Adjust the size as needed */
+  height: 250px; /* The container should be a square for a circular appearance */
+  border-radius: 50%; /* Create a circular shape */
+  overflow: hidden;
+}
+
+.circular-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.circular-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the circular container */
+}
+
+.circular-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* Background color for the placeholder */
+  color: #888;
+  font-size: 14px;
+}
+
+.circular-file-input {
+  display: none; /* Hide the file input */
+}
+
+
+
+
