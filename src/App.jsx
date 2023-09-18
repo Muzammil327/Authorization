@@ -42,11 +42,10 @@ function App() {
           <Route path="admin/product" element={<GetProduct />} />
           <Route path="admin/product/create" element={<CreateProduct />} />
           <Route path="admin/product/update/:id" element={<UpdateProduct />} />
-
+          
           <Route path="/about" exact element={<h2>About US</h2>} />
           <Route path="/contact" exact element={<h2>Contact US</h2>} />
         
-
           <Route
             path="dashboard/update/:id"
             element={!isAuthenticated ? <LoginPage /> : <UpdatedUser />}
