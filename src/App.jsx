@@ -16,7 +16,7 @@ import UpdateCategory from "./pages/admin/catgeory/Ucatgeory";
 import GetProduct from "./pages/admin/product/Gproduct";
 import CreateProduct from "./pages/admin/product/Cproduct";
 import UpdateProduct from "./pages/admin/product/Uproduct";
-import NotFound from "./NotFound";
+import NotFound from "./components/NotFound";
 
 function App() {
   const dispatch = useDispatch();
