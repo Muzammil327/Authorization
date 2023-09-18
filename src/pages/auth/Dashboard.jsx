@@ -7,8 +7,10 @@ export default function DashboardPage() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
+    
+    const URL = `${import.meta.env.VITE_LOCALHOST}/api/user`;
     axios
-      .get("http://localhost:8000/api/user", {
+      .get(URL, {
         withCredentials: true,
       })
       .then((res) => {
