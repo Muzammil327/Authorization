@@ -32,9 +32,9 @@ const Register = () => {
         console.log(res.data.error);
       } else {
         toast.success(res.data.message);
+        setLoadings(true);
         localStorage.setItem("user", JSON.stringify(res.data.user));
 
-        setLoadings(true);
 
         setTimeout(() => {
           setLoadings(false);
@@ -123,7 +123,8 @@ const Register = () => {
                 <input
                   className="bg-[#4F46E5] w-full py-2 rounded-md text-white font-bold cursor-pointer hover:bg-[#181196]"
                   type="submit"
-                  defaultValue="Register"
+                  // defaultValue="Register"
+                  defaultValue={loadings ? "Register":"Loading"}
                 />
               </div>
             </form>
