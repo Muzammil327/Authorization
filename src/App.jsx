@@ -44,8 +44,8 @@ function App() {
           <Route path="admin/product/create" element={<CreateProduct />} />
           <Route path="admin/product/update/:id" element={<UpdateProduct />} />
 
-          <Route path="about" element={<h2>About US</h2>} />
-          <Route path="contact" element={<h2>Contact US</h2>} />
+          <Route path="/about" element={<h2>About US</h2>} />
+          <Route path="/contact" element={<h2>Contact US</h2>} />
 
           <Route
             path="dashboard/update/:id"

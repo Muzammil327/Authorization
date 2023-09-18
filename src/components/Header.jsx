@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../redux/slices/auth";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -64,9 +65,9 @@ export default function Header() {
               data-te-collapse-item
             >
               {/* Logo */}
-              <a
+              <Link
                 className="mb-4 ml-2 mr-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
-                href="/"
+                to="/"
               >
                 <img
                   src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp"
@@ -74,7 +75,7 @@ export default function Header() {
                   alt="TE Logo"
                   loading="lazy"
                 />
-              </a>
+              </Link>
               {/* Left navigation links */}
               <ul
                 className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
@@ -92,23 +93,23 @@ export default function Header() {
                 </li>
                 {/* Team link */}
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                  <a
+                  <Link
                     className="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                    href="/about"
+                    to="/about"
                     data-te-nav-link-ref
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 {/* Projects link */}
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                  <a
+                  <Link
                     className="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                    href="/contact"
+                    to="/contact"
                     data-te-nav-link-ref
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -229,8 +230,8 @@ export default function Header() {
 
             <div className="flex justify-between items-center gap-5">
               <div className="flex justify-between items-center gap-5 mx-4">
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
               </div>
             </div>
           </div>
