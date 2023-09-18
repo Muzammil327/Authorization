@@ -16,6 +16,7 @@ import UpdateCategory from "./pages/admin/catgeory/Ucatgeory";
 import GetProduct from "./pages/admin/product/Gproduct";
 import CreateProduct from "./pages/admin/product/Cproduct";
 import UpdateProduct from "./pages/admin/product/Uproduct";
+import NotFound from "./NotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" exact element={<HomePage />} />
           <Route path="products" element={<Product />} />
           <Route path="cart" element={<Cart />} />
 
@@ -44,13 +45,15 @@ function App() {
           <Route path="admin/product/create" element={<CreateProduct />} />
           <Route path="admin/product/update/:id" element={<UpdateProduct />} />
 
-          <Route path="/about" element={<h2>About US</h2>} />
-          <Route path="/contact" element={<h2>Contact US</h2>} />
+          <Route path="/about" exact element={<h2>About US</h2>} />
+          <Route path="/contact" exact element={<h2>Contact US</h2>} />
+        <Route path="*" element={<NotFound />} />
 
           <Route
             path="dashboard/update/:id"
             element={!isAuthenticated ? <LoginPage /> : <UpdatedUser />}
           />
+        
           <Route
             path="register"
             element={!isAuthenticated ? <RegisterPage /> : <DashboardPage />}
