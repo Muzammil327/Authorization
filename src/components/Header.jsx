@@ -81,8 +81,8 @@ export default function Header() {
                 className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
                 data-te-navbar-nav-ref
               >
-                <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                  {/* Dashboard link */}
+                {/* <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                
                   <a
                     className="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
                     href="/products"
@@ -90,7 +90,7 @@ export default function Header() {
                   >
                     Products
                   </a>
-                </li>
+                </li> */}
                 {/* Team link */}
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                   <Link
@@ -177,7 +177,7 @@ export default function Header() {
                 <button href="" onClick={SubmitHandle}>
                   Signout
                 </button>
-                <a href="/dashboard">Dashboard</a>
+                <Link to="/dashboard">Dashboard</Link>
               </div>
             </div>
           </div>
@@ -208,22 +208,22 @@ export default function Header() {
                 data-te-navbar-nav-ref
               >
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                  <a
+                  <Link
                     className="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                    href="/about"
+                    to="/about"
                     data-te-nav-link-ref
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                  <a
+                  <Link
                     className="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                    href="/contact"
+                    to="/contact"
                     data-te-nav-link-ref
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
