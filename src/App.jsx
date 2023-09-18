@@ -15,9 +15,7 @@ import GetCategory from "./pages/admin/catgeory/Gcatgeory";
 import UpdateCategory from "./pages/admin/catgeory/Ucatgeory";
 import GetProduct from "./pages/admin/product/Gproduct";
 import CreateProduct from "./pages/admin/product/Cproduct";
-import UpdateProduct from "./pages/admin/product/Uproduct";
-import NotFound from "./components/NotFound";
-
+import UpdateProduct from "./pages/admin/product/Uproduct"
 function App() {
   const dispatch = useDispatch();
   const storedUser = localStorage.getItem("user");
@@ -47,7 +45,7 @@ function App() {
 
           <Route path="/about" exact element={<h2>About US</h2>} />
           <Route path="/contact" exact element={<h2>Contact US</h2>} />
-        <Route path="*" element={<NotFound />} />
+        
 
           <Route
             path="dashboard/update/:id"
