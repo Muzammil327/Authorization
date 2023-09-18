@@ -5,7 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    base: '/', // Ensure this is set to '/'
-    // ... other server configuration options
+    // Ensure you set the `base` to your app's root path.
+    base: '/',
+    // Enable fallback to index.html for unknown routes
+    fs: {
+      strict: false,
+    },
   },
 })
