@@ -1,20 +1,31 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import Loader from "../Loader";
-import { useParams } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { update } from "../../redux/slices/auth";
+import { useDispatch } from "react-redux";
 
 const Updated = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+console.log("start")
+  const user = useSelector((state) => state.user.user);
+
+  
+  const [datas, setDatas] = useState({
+    username: user.usename,
+    email: user.email,
+  });
+  console.log("datas", datas)
   const [loadings, setLoadings] = useState(false);
   const { id } = useParams();
 
-  const [datas, setDatas] = useState([]);
   const SubmitHandle = async (e) => {
     e.preventDefault();
  
     const URL = `${import.meta.env.VITE_LOCALHOST}/api/user/update/${id}`;
-    await axios.put(
+    const res = await axios.put(
       URL,
       { 
         email: datas.email, 
@@ -23,11 +34,14 @@ const Updated = () => {
       { withCredentials: true }
     );
    
+    localStorage.setItem("user", JSON.stringify(res.data.category));
     setLoadings(true);
 
+    
     setTimeout(() => {
       setLoadings(false);
-      navigate("/login");
+      navigate("/dashboard");
+      dispatch(update(res.data.user));
     }, 3000);
   };
 

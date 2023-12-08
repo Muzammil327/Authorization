@@ -51,7 +51,7 @@ const Register = () => {
       {loadings ? (
         <Loader />
       ) : (
-        <div className="bg-[#F9FAFB] h-screen w-screen flex items-center">
+        <div className="bg-[#F9FAFB] py-20 w-screen flex items-center">
           <div className="h-max mx-auto flex flex-col items-center">
             <img
               className="h-[40px] w-[47px] mb-5"

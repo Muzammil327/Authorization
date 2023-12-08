@@ -29,44 +29,58 @@
   }
 }
 
+/* CircularImageUpload.css */
 
-/* App.css */
-.circular-container {
+.circular-input {
+  display: inline-block;
   position: relative;
-  width: 250px; /* Adjust the size as needed */
-  height: 250px; /* The container should be a square for a circular appearance */
-  border-radius: 50%; /* Create a circular shape */
-  overflow: hidden;
 }
 
-.circular-label {
-  display: block;
+.circular-input input[type="file"] {
+  position: absolute;
   width: 100%;
   height: 100%;
+  opacity: 0;
   cursor: pointer;
+  z-index: 2;
 }
 
-.circular-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image covers the circular container */
-}
-
-.circular-placeholder {
+.circular-image-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.circular-image-preview img {
   width: 100%;
   height: 100%;
-  background-color: #f0f0f0; /* Background color for the placeholder */
-  color: #888;
+  object-fit: cover;
+}
+
+.circular-image-preview .placeholder {
+  font-size: 24px;
+  color: #aaa;
+  user-select: none;
+}
+
+/* Style the label (optional) */
+.circular-input label {
+  cursor: pointer;
+  display: block;
+  text-align: center;
   font-size: 14px;
+  margin-top: 8px;
 }
 
-.circular-file-input {
-  display: none; /* Hide the file input */
+/* Style the label text when hovering over the preview */
+.circular-input:hover label {
+  color: #007bff; /* Change to your desired color */
 }
-
-
-
-
